@@ -1,0 +1,30 @@
+body {
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-picture-container {
+    position: relative;
+    transform: translate(85%);
+    
+}
+
+.profile-picture {
+    border-radius: 50%;
+    height: 30vh;
+    width: 30vh;
+    overflow: hidden;
+}
+
+.profile-text-container {
+    position: flex;
+    text-align: center;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.btn {
+    position: relative;
+    align-content: start;
+    justify-content: start;
+}
