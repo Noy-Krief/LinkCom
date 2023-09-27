@@ -1,34 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="https://maps.googleapis.com/maps/api/js?key=API_KEY_FROM_DB&&libraries=places"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חנויות</title>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
+    <div> :חנויות הנקמות שלנו </div>
     <div id="map" style="height: 400px; width: 100%;"></div>
-    
-    <script>
-        // Initialize Map
-        function initMap() {
-            const map = new google.maps.Map(document.getElementById("map"), {
-                center: { lat: 0, lng: 0 },
-                zoom: 10,
-            });
-
-            // Get locations for the map
-            fetch('/api/locations')
-                .then(response => response.json())
-                .then(data => {
-                    data.forEach(location => {
-                        const marker = new google.maps.Marker({
-                            position: { lat: location.latitude, lng: location.longitude },
-                            map: map,
-                            title: location.name,
-                        });
-                    });
-                });
-        }
-
-        window.onload = initMap;
-    </script>
+    <script src="../controllers/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=GOOGLE_API_KEY&callback=initMap"></script>
 </body>
 </html>
