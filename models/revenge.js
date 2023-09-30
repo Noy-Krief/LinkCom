@@ -1,18 +1,22 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const Post = new Schema({
+const Revenge = new Schema({
     title : {
         type: String,
         required: true
     },
-    tool : {
+    date : {
+        type: Date,
+        required: true
+    },
+    location : {
         type: String,
         required: true
     },
-    body : {
+    who : {
         type: String,
-        required: false
+        required: true
     },
     published: {
         type: Date,
@@ -21,11 +25,7 @@ const Post = new Schema({
     likes : {
         type: Array,
         default: []
-    },
-    comments : {
-        type: Array,
-        default: []
     }
 });
 
-module.exports = mongoose.model('Post', Post);
+module.exports = mongoose.model('Revenge', Revenge);
