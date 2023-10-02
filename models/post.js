@@ -6,23 +6,11 @@ const Post = new Schema({
         type: String,
         required: true
     },
-    tool : {
-        type: String,
-        required: true
-    },
     body : {
         type: String,
         required: false
     },
-    published: {
-        type: Date,
-        default: Date.now
-    },
     likes : {
-        type: Array,
-        default: []
-    },
-    comments : {
         type: Array,
         default: []
     }

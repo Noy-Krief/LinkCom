@@ -1,17 +1,12 @@
 const Post = require('../models/post')
 
-const createPost = async (title, date, location, who, body, published) => {
+const createPost = async (title, body) => {
     const post = new Post({
-        title : title,
-        date : date,
-        location : location,
-        who : who
+        title : title
     });
 
     if (body)
         post.body = body;
-    if (published)
-        post.published = published;
 
     return await post.save();
 };
