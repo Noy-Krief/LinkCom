@@ -4,11 +4,10 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const posts = require('./routes/post');
 
-require('custom-env').env(process.env.NODE_ENV, './config');
+const config = require('./config')
+// require('custom-env').env(process.env.NODE_ENV, './config');
 
-mongoose.connect(process.env.CONNECTION_STRING,
-                {   useNewUrlParser: true,
-                    useUnifiedTopology: true });
+mongoose.connect(config.CONNECTION_STRING,{ useNewUrlParser: true, useUnifiedTopology: true });
 
 var app = express();
 app.use(cors());
