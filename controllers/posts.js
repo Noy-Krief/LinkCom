@@ -7,7 +7,7 @@ const createPost = async (req, res) => {
 
 const getPosts = async (req, res) => {
     const posts = await postService.getPosts();
-    res.render('posts.ejs', posts)
+    res.render('posts.ejs', {posts : posts})
     // res.json(posts);
 };
 
