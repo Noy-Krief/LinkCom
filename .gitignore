@@ -1,1 +1,4 @@
-config/.env.local
+config/
+node_modules/
+package-lock.json
+.env
