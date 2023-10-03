@@ -24,6 +24,9 @@ crossorigin="anonymous">
     <symbol id="events" viewBox="0 0 16 16">
         <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-3.5-7h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z"/>
     </symbol>
+    <symbol id="menu" viewBox="0 0 16 16">
+        <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+    </symbol>
     </svg>
 
     <header>
@@ -55,14 +58,14 @@ crossorigin="anonymous">
                     </a>
                     </li>
                 </ul>
-                <div class="d-flex">
+                <!-- <div class="d-flex">
                     <a href="login.html" class="nav-link btn login">
                         <button type="button" class="btn btn-light text-dark me-2">Login</button>
                     </a>
                     <a href="signup.html" class="nav-link btn signup">
                         <button type="button" class="btn btn-primary">Sign-up</button>
                     </a>
-                </div>
+                </div> -->
                 
             </div>
         </div>
@@ -78,16 +81,28 @@ crossorigin="anonymous">
     <main class="container mt-4">
         <div class="row">
             <% for (var i = 0; i < posts.length; i++) { %>
+                <%= posts[i].groupName %>
                 <div class="col-md-6 offset-md-3">
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="d-flex align-items-center">
-                                <div class="author-avatar">
-                                    <img src="../images/linkcom-logo.svg" class="rounded-circle" width="40" height="40">
-                                </div>
                                 <div class="ms-3">
-                                    <h5 class="card-group"><%= posts[i].group_name %></h5>
-                                    <h5 class="card-author text-small"><%= posts[i].author %></h5>
+                                    <div class="d-flex flex-wrap justify-content-between align-items-center">
+                                        <div class="author-avatar">
+                                            <div class="row align-items-center">
+                                                <div class="col-auto">
+                                                    <img src="../images/linkcom-logo.svg" class="rounded-circle" width="40" height="40">
+                                                </div>
+                                                <div class="col">
+                                                    <h5 class="card-author text-small me-2 mt-2"><%= posts[i].author %></h5>
+                                                    <h5 class="card-group"><%= posts[i].group_name %></h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="post-menu">
+                                            <svg class="d-block mx-auto mb-2" width="12" height="12"><use xlink:href="#menu"/></svg>
+                                        </div>
+                                    </div>
                                     <p class="card-text"><%= posts[i].body %></p>
                                     <button class="like-button">Hates <%= posts[i].hates %></button>
                                 </div>
