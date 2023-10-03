@@ -19,12 +19,13 @@ const getPosts = async () => {
     return await Post.find({});
 };
 
-const updatePost = async(id, title) => {
+const updatePost = async(id, title, body) => {
     const post = await getPostById(id);
     if (!post)
         return null;
 
     post.title = title;
+    post.body = body;
     await post.save();
     return post;
 };

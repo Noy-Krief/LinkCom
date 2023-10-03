@@ -6,14 +6,18 @@ const Post = new Schema({
         type: String,
         required: true
     },
+    author : {
+        type: String,
+        required: true
+    },
     body : {
         type: String,
-        required: false
+        required: true
     },
-    likes : {
-        type: Array,
-        default: []
+    hates : {
+        type: String,
+        default: ""
     }
-});
+}, { collection: 'posts'});
 
 module.exports = mongoose.model('Post', Post);
