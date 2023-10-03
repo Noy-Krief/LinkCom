@@ -1,4 +1,5 @@
-
+// open signup form when pressing on sign up in login page
+// close signup form when pressing on X
 $(document).ready(function(){
     $('.signup').click(()=> {
         $('#modalSignin').css("display", "block")
@@ -9,4 +10,6 @@ $(document).ready(function(){
         $('#modalSignin').css("display", "none")
     })
 });
+
+
 
