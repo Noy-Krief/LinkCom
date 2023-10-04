@@ -1,35 +1,31 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const Account = new Schema({
-    username : {
+const Revenge = new Schema({
+    title : {
         type: String,
         required: true
     },
-    email : {
+    date : {
         type: Date,
         required: true
     },
-    password : {
+    location : {
         type: String,
         required: true
     },
-    createdAt : {
+    who : {
+        type: String,
+        required: true
+    },
+    published: {
         type: Date,
         default: Date.now
     },
-    friends : {
-        type: Array,
-        default: []
-    },
-    posts : {
-        type: Array,
-        default: []
-    },
-    chats : {
+    likes : {
         type: Array,
         default: []
     }
-}, { collection: "accounts"});
+});
 
-module.exports = mongoose.model('Account', Account);
+module.exports = mongoose.model('Revenge', Revenge);
