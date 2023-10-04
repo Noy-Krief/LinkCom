@@ -39,8 +39,3 @@ body {
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
 }
-
-#modalSignin {
-    display: none;
-    background-color: #ffffff09;
-}
