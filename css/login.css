@@ -44,3 +44,16 @@ body {
     display: none;
     background-color: #ffffff09;
 }
+
+.error-button {
+  background-color: #ff3333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.error-message {
+  color: #ff3333;
+  margin-top: 5px;
+}

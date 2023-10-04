@@ -2,33 +2,37 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const Account = new Schema({
-    username : {
+    display_name : {
         type: String,
         required: true
     },
-    email : {
-        type: Date,
+    user_mane : {
+        type: String,
         required: true
     },
     password : {
         type: String,
         required: true
     },
-    createdAt : {
-        type: Date,
-        default: Date.now
-    },
-    friends : {
-        type: Array,
-        default: []
+    groups : {
+        type: [String],
+        required: true
     },
     posts : {
-        type: Array,
-        default: []
+        type: Number,
+        required: true
     },
-    chats : {
-        type: Array,
-        default: []
+    events : {
+        type: [String],
+        required: true
+    },
+    future_revenges : {
+        type: [String],
+        required: true
+    },
+    profile_picture : {
+        type: String,
+        required: true
     }
 }, { collection: "accounts"});
 
