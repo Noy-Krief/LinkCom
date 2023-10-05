@@ -6,7 +6,7 @@ const Account = new Schema({
         type: String,
         required: true
     },
-    user_mane : {
+    user_name : {
         type: String,
         required: true
     },
@@ -19,7 +19,7 @@ const Account = new Schema({
         required: true
     },
     posts : {
-        type: Number,
+        type: [String],
         required: true
     },
     events : {
