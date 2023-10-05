@@ -1,30 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" data-bs-theme="auto">
-  <head><script src="../assets/js/color-modes.js"></script>
-
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
-    <link href="../public/css/login.css" rel="stylesheet">
   </head>
   <body class="d-flex align-items-center py-4 bg-body-tertiary">
     <main class="form-signin w-38 m-auto mt-5">
     <form>
-        <img class="mb-4" src="../public/images/linkcom-logo.svg" alt="" width="72" height="57">
+        <img class="mb-4" src="/images/linkcom-logo.svg" alt="" width="72" height="57">
         <h2 class="d-inline"> LinkCom</h2>
         <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
         <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <input type="email" class="form-control" id="signinEmail" placeholder="name@example.com">
         <label for="floatingInput">Email address</label>
         </div>
         <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <input type="password" class="form-control" id="signinPassword" placeholder="Password">
         <label for="floatingPassword">Password</label>
         </div>
 
@@ -34,12 +33,12 @@
             Remember me
         </label>
         </div>
-        <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+        <button id="loginButton" class="btn btn-primary w-100 py-2" type="button">Sign In</button>
         <label class="form-sign-up mt-2" for="flexSignUp">
             Don't have an account?
         </label>
         <button class="btn signup btn-secondary w-100 py-2 mt-2" type="button">Sign Up</button>
-        <p class="mt-5 mb-3 text-body-secondary">&copy; Reserved to Nizan</p>
+        <p class="mt-5 mb-3 text-body-secondary">&copy; Powered by LinkCom</p>
     </form>
     </main>
 
@@ -68,5 +67,5 @@
         </div>
       </div>
     </body>
-    <script src="../public/js/login.js"></script>
+    <script src="/js/login.js"></script>
 </html>

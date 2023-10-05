@@ -1,5 +1,4 @@
-html,
-body {
+html,body {
   height: 100%;
 }
 
@@ -45,6 +44,10 @@ body {
     background-color: #ffffff09;
 }
 
+#errorMessage {
+  display: none;
+}
+
 .error-button {
   background-color: #ff3333;
   color: #fff;
@@ -53,7 +56,6 @@ body {
   cursor: pointer;
 }
 
-.error-message {
-  color: #ff3333;
+/* .error-message {
   margin-top: 5px;
-}
+} */

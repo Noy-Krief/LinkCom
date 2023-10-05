@@ -1,12 +1,13 @@
 const loginController = require('../controllers/login');
-const postsRouter = require('../routes/post');
+// const postsController = require('../controllers/posts');
 const express = require('express');
 
 var router = express.Router();
 
-router.route('/')
-      .get(loginController.goToLogin);
+router.route('/login').get(loginController.goToLogin);
 
-router.use('/posts', postsRouter);
+router.post('/login', (req, res) => {
+    loginController.validateAccount(req.body.email);
+})
 
 module.exports = router;

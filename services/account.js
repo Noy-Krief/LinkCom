@@ -14,8 +14,8 @@ const getAccountByName = async (name) => {
     return await Account.findByName(name);
 };
 
-const getAccountByEmail = async (mail) => {
-    return await Account.findByEmail(mail);
+const getAccountByEmail = async (email) => {
+    return await Account.find({ email : email });
 };
 
 const updateAccount = async(name, password) => {

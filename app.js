@@ -14,6 +14,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
 
 app.use('/', loginRouter);
+app.use('/posts', postsRouter);
+
+app.get('/', (req, res) => {
+    res.redirect('/login')
+});
 
 app.use(express.static('public'));
 
