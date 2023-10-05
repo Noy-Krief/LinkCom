@@ -6,7 +6,7 @@ const Account = new Schema({
         type: String,
         required: true
     },
-    mail : {
+    email : {
         type: String,
         required: true
     },
@@ -14,17 +14,9 @@ const Account = new Schema({
         type: String,
         required: true
     },
-    posts : {
-        type: [String],
-    },
-    events : {
-        type: [String],
-    },
-    future_revenges : {
-        type: [String],
-    },
     profile_picture : {
         type: String,
+        required: false
     }
 }, { collection: "accounts"});
 
