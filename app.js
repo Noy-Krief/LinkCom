@@ -2,6 +2,7 @@
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const loginRouter = require('./routes/login');
 const postsRouter = require('./routes/post');
 const express = require('express');
 require('dotenv').config();
@@ -13,6 +14,8 @@ app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
 
-app.use('/', postsRouter);
+app.use('/', loginRouter);
+
+app.use(express.static('public'));
 
 app.listen(process.env.PORT);

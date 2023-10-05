@@ -18,10 +18,6 @@ const Account = new Schema({
         type: Date,
         default: Date.now
     },
-    friends : {
-        type: Array,
-        default: []
-    },
     posts : {
         type: Array,
         default: []
