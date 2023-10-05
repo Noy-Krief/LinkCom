@@ -1,24 +1,24 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const Post = new Schema({
-    author : {
+const Group = new Schema({
+    group_name : {
         type: String,
         required: true
     },
-    body : {
+    manager : {
         type: String,
         required: true
     },
-    hates : {
-        type: Number,
+    members : {
+        type: Array[String],
         required: true,
-        default: 0
+        default: []
     },
-    group_name: {
+    group_picture : {
         type: String,
         required: false
     }
-}, { collection: 'posts'});
+}, { collection: 'groups'});
 
-module.exports = mongoose.model('Post', Post);
+module.exports = mongoose.model('Group', Group);

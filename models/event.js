@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const Revenge = new Schema({
-    title : {
+const Event = new Schema({
+    author : {
         type: String,
         required: true
     },
@@ -14,18 +14,18 @@ const Revenge = new Schema({
         type: String,
         required: true
     },
-    who : {
+    title : {
+        type: String,
+        required: true,
+    },
+    target: {
         type: String,
         required: true
     },
-    published: {
-        type: Date,
-        default: Date.now
-    },
-    likes : {
-        type: Array,
-        default: []
+    body : {
+        type: String,
+        required: true
     }
-});
+}, { collection: 'events'});
 
-module.exports = mongoose.model('Revenge', Revenge);
+module.exports = mongoose.model('Event', Event);
