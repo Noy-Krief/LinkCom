@@ -1,11 +1,11 @@
 const accountService = require('../services/account');
 
 const getAccountByEmail = async (req, res) => {
-    const account = await accountService.getAccountByEmail(req.body.email);
+    const account = await accountService.getAccountByEmail(req);
     if (!account) {
-        return "no such account";
+        return null;
     }
-    res.json(account);
+    res.render('accounts.ejs', { account : account });
 }
 
 const index = (req, res) => {
