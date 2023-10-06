@@ -5,13 +5,14 @@ const goToLogin = (req, res) => {
 };
 
 const validateAccount = async (req, res) => {
-    const account = await loginService.getAccountByEmail(req);
+    console.log(req);
+    const account = await loginService.getAccountByEmail(req.email);
 
-    console.log(account);
-    if (req == account['password']) {
+    if (req.password == account[0].password) {
+        console.log(res);
         res.redirect('/posts');
     } else {
-        alert("Error")
+        console.log("Error")
     }
 };
 

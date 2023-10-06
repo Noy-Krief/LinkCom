@@ -9,6 +9,29 @@ $(document).ready(function(){
         } else {
             console.log("sending data...");
         // Send a POST request to the server for authentication
+            // $.ajax({
+            //     type: 'POST',
+            //     url: '/login', // Replace with your authentication endpoint
+            //     data: {
+            //     email: email,
+            //     password: password,
+            //     // Include any necessary data for authentication
+            //     },
+            //     success: function(data) {
+            //         // Handle successful authentication here
+            //         if (data.authenticated) {
+            //           // Redirect to the posts page upon successful authentication
+            //           window.location.href = '/posts';
+            //         } else {
+            //           // Handle authentication failure, e.g., show an error message
+            //           alert('Authentication failed');
+            //         }
+            //       },
+            //       error: function(error) {
+            //         // Handle AJAX request error here
+            //         console.error('Authentication request failed', error);
+            //       },
+            //     });
             fetch('/login', { method: 'POST',
                             headers: {'Content-Type': 'application/json'},
                             body: JSON.stringify({email: email, password: password}),})
@@ -16,7 +39,7 @@ $(document).ready(function(){
                             .then((data) => {
                                 if (data.success) {
                                     // Authentication was successful
-                                    window.location.href = '/posts'; // Redirect to the dashboard page, for example
+                                    window.location.href = '/posts';
                                 } else {
                                     // Authentication failed
                                     alert(data.message);

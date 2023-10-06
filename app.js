@@ -10,15 +10,16 @@ require('dotenv').config();
 mongoose.connect(process.env.CONNECTION_STRING, { useNewUrlParser: true, useUnifiedTopology: true });
 var app = express(); 
 app.use(cors());
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
 
 app.use('/', loginRouter);
-app.use('/posts', postsRouter);
+app.use('/', postsRouter);
 
-app.get('/', (req, res) => {
-    res.redirect('/login')
-});
+// app.get('/', (req, res) => {
+//     res.redirect('/login')
+// });
 
 app.use(express.static('public'));
 
