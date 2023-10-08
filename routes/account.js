@@ -4,7 +4,7 @@ const express = require('express');
 var accountRouter = express.Router();
 
 accountRouter.get('/profile', (req, res) => {
-    accountController.getAccountByEmail(req.body.email, res);
+    accountController.getAccountByEmail(req, res);
 });
 
 // loginRouter.post('/login', (req, res) => {

@@ -37,14 +37,14 @@ crossorigin="anonymous">
         <div class="px-3 py-2 text-bg-info border-bottom">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <a href="#" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-black text-decoration-none">
+                <a href="/home" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-black text-decoration-none">
                     <svg class="bi me-2" width="40" height="32" role="img" aria-label="LinkCom"><use xlink:href="#barcode"/></svg>
                     <h2> LinkCom </h2>
                 </a>
 
                 <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
                     <li>
-                    <a href="#" class="nav-link text-black">
+                    <a href="/home" class="nav-link text-black">
                         <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
                         Home
                     </a>
@@ -72,7 +72,7 @@ crossorigin="anonymous">
             <div>
                 <div class="profile-info text-bg-light border-bottom">
                     <div class="profile-picture-container">
-                        <img class="profile-picture" src="/images/profile-picture.jpg" alt="Profile Picture">
+                        <img class="profile-picture" src="<%= account[0].profile_picture %>" alt="Profile Picture">
                     </div>
                     <div class="profile-text-container text-black fw-bold">
                         <h1 class="profile-text"> <%= account.display_name %> </h1>

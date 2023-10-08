@@ -5,14 +5,13 @@ const goToLogin = (req, res) => {
 };
 
 const validateAccount = async (req, res) => {
-    console.log(req);
-    const account = await loginService.getAccountByEmail(req.email);
+    const account = await loginService.getAccountByEmail(req.body.email);
 
-    if (req.password == account[0].password) {
-        console.log(res);
-        res.redirect('/posts');
+    if (req.body.password == account[0].password) {
+        req.session.userData = account;
+        res.redirect('/home');
     } else {
-        console.log("Error")
+        res.status(401).json({error: 'Authentication failed'})
     }
 };
 
