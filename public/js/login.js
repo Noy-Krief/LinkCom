@@ -7,7 +7,6 @@ $(document).ready(function(){
         if (!email || !password) {
             alert("please fill in the relevant fields")
         } else {
-            console.log("sending data...");
         // Send a POST request to the server for authentication
             fetch('/login', { method: 'POST',
                             headers: {'Content-Type': 'application/json'},

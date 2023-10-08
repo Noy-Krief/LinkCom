@@ -7,8 +7,4 @@ accountRouter.get('/profile', (req, res) => {
     accountController.getAccountByEmail(req, res);
 });
 
-// loginRouter.post('/login', (req, res) => {
-//     loginController.validateAccount(req.body, res);
-// })
-
 module.exports = accountRouter;

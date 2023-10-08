@@ -15,6 +15,10 @@ const getPostById = async (id) => {
     return await Post.findById(id);
 };
 
+const getPostsByAuthor = async (author) => {
+    return await Post.find({author: author});
+}
+
 const getPosts = async () => {
     return await Post.find({});
 };
@@ -42,6 +46,7 @@ const deletePost = async (id) => {
 module.exports = {
     createPost,
     getPostById,
+    getPostsByAuthor,
     getPosts,
     updatePost,
     deletePost

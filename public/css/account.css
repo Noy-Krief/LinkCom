@@ -5,15 +5,20 @@ body {
 
 .profile-picture-container {
     position: relative;
-    transform: translate(85%);
+    transform: translate(80%);
+    margin-top: 100px;
     
 }
 
 .profile-picture {
-    border-radius: 50%;
-    height: 30vh;
-    width: 30vh;
+    height: 24vh;
+    width: 24vh;
+    margin-top: 55px;
     overflow: hidden;
+}
+
+.profile-info {
+    height: 40px;
 }
 
 .profile-text-container {
@@ -27,4 +32,23 @@ body {
     position: relative;
     align-content: start;
     justify-content: start;
+}
+
+.sticky-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.posts-container {
+margin-top: 50px;
+overflow-y: auto;
+}
+
+.hates-box {
+width: 20px;
+height: 20px;
+display: -webkit-inline-box;
 }

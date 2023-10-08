@@ -10,6 +10,11 @@ const getPosts = async (req, res) => {
     res.render('posts.ejs', {posts : posts, userData: req});
 };
 
+const getPostsByAuthor = async (req, res) => {
+    const posts = await postService.getPostsByAuthor(req.session.userData[0].display_name);
+    res.json({posts: posts, account: req.session.userData});
+}
+
 const getPost = async (req, res) => {
     const post = await postService.getPostById(req.params.id);
     if (!post) {
@@ -20,11 +25,11 @@ const getPost = async (req, res) => {
 };
 
 const updatePost = async (req, res) => {
-    if (!req.body.title || !req.body.date || !req.body.location || !req.body.who) {
+    if (!req.body.title || !req.body.body) {
         return res.status(400).json({ message: 'Missing required field',});
     }
 
-    const post = await postService.updatePost(req.params.id, req.body.title, req.body.date, req.body.location, req.body.who, req.body.body);
+    const post = await postService.updatePost(req.params.id, req.body.title, req.body.body);
     if (!post) {
         return res.status(404).json({ errors: ['Post not found']});
     }
@@ -44,6 +49,7 @@ const deletePost = async (req, res) => {
 module.exports = {
     createPost,
     getPosts,
+    getPostsByAuthor,
     getPost,
     updatePost,
     deletePost
